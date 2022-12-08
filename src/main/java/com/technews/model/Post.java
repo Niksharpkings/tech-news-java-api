@@ -128,9 +128,10 @@ public class Post implements Serializable {
                 '}';
     }
 }
-/*orignal
-*
-* package com.technews.model;
+
+/* original
+package com.technews.model;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -251,7 +252,15 @@ public class Post implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
-        return voteCount == post.voteCount && Objects.equals(id, post.id) && Objects.equals(title, post.title) && Objects.equals(postUrl, post.postUrl) && Objects.equals(userName, post.userName) && Objects.equals(userId, post.userId) && Objects.equals(postedAt, post.postedAt) && Objects.equals(updatedAt, post.updatedAt) && Objects.equals(comments, post.comments);
+        return voteCount == post.voteCount &&
+                Objects.equals(id, post.id) &&
+                Objects.equals(title, post.title) &&
+                Objects.equals(postUrl, post.postUrl) &&
+                Objects.equals(userName, post.userName) &&
+                Objects.equals(userId, post.userId) &&
+                Objects.equals(postedAt, post.postedAt) &&
+                Objects.equals(updatedAt, post.updatedAt) &&
+                Objects.equals(comments, post.comments);
     }
 
     @Override
@@ -274,4 +283,5 @@ public class Post implements Serializable {
                 '}';
     }
 }
-* */
+
+*/
