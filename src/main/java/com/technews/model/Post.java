@@ -1,7 +1,6 @@
 package com.technews.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -23,13 +22,13 @@ public class Post implements Serializable {
     @Transient
     private int voteCount;
     private Integer userId;
-    @NotNull
+
     @Temporal(TemporalType.DATE)
-    @Column(name = "posted_at")
+    @Column(name = "posted_at", nullable = false)
     private Date postedAt = new Date();
-    @NotNull
+
     @Temporal(TemporalType.DATE)
-    @Column(name = "updated_at")
+    @Column(name = "updated_at", nullable = false)
     private Date updatedAt = new Date();
     // Need to use FetchType.LAZY to resolve multiple bags exception
     @OneToMany(mappedBy = "postId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
